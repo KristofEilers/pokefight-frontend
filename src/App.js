@@ -4,10 +4,13 @@ import "./App.css";
 // import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Search from "./components/Search";
+import Filter from "./components/Filter"
 
 function App() {
   const [pokemon, setPokemon] = useState([]); // Rename state variable
   // const { pathname } = useLocation();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     async function fetchPokemon() {
@@ -21,16 +24,24 @@ function App() {
     }
 
     fetchPokemon(); // Call asynchronous function
-  }, []);
+  }, [query]);
+
 
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, [pathname]);
 
   console.log(pokemon);
+  console.log("hallo")
+
   return (
     <div className="App">
       <header className="App-header">
+        <Search setQuery={setQuery} pokemon={pokemon} placeholder = "Search..."/>
+        <Filter pokemon={pokemon}/>
+
+        <div>
+        </div>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
