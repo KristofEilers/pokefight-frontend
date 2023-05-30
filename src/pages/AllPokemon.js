@@ -12,7 +12,11 @@ export default function AllPokemon({ pokemondb }) {
         ))
       ) : (
         <h1>No Pokemon Found</h1>
+
+       
       )}
+
+<h2>Neue Seite</h2>
     </>
   );
 }
