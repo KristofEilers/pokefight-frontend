@@ -31,6 +31,26 @@ function App() {
     fetchPokemon(); // Call asynchronous function
   }, []);
 
+
+////////////////////// Highscore fetch start ///////////////////////////////////
+const [score, setScore] = useState([])
+
+useEffect(() => {
+  async function fetchScore() {
+    // Define asynchronous function
+    try {
+      const response = await axios.get("http://localhost:8080/score"); // Make GET request to localhost:8080/score
+      setScore(response.data); // Set state with response data
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  fetchScore(); // Call asynchronous function
+}, []);
+
+////////////////////// Highscore fetch end ///////////////////////////////////
+
+
   // useEffect(() => {
   //   window.scrollTo(0, 0);
   // }, [pathname]);
@@ -48,7 +68,7 @@ function App() {
               path="allpokemon"
               element={<AllPokemon pokemondb={pokemon} />}
             />
-            <Route path="highscore" element={<Highscore />} />
+            <Route path="highscore" element={<Highscore score={score}/>} />
             <Route
               path="pokemon/:pokeId"
               element={<PokemonDetail pokemondb={pokemon} />}
