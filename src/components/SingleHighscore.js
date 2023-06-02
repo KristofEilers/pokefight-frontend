@@ -5,19 +5,6 @@ export default function SingleHighscore( {score, item} ) {
 
 
   return (
-    // <div>
-    //   {/* {score.map((singleScore) => { */}
-    //     return (
-    //       <div>
-    //         <p>
-    //           {score.first_pokemon}
-    //         </p>
-    //       </div>
-    //     );
-    //   {/* }) */}
-    //   {/* } */}
-    // </div>
-
     <>
       <p>{item.winner}</p>
       <p>{item.total_wins}</p>

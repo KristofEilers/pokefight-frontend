@@ -7,10 +7,6 @@ console.log("score", score)
   return <>
   <h1>PokeFight Alltime-Highscores</h1>
     <ul>
-      {/* {score.map((singleScore) => <li>{singleScore.first_pokemon}</li>)}
-
-      <SingleScore component  score = {score}/> */}
-
       {score.length > 0 ? (
             score.map((item) => (
               <SingleHighscore item={item} score={score} />
@@ -18,13 +14,6 @@ console.log("score", score)
           ) : (
             <h1>No Highscores available yet</h1>
           )}
-
-
-
-
-
-
-
     </ul>
   </>;
 }
