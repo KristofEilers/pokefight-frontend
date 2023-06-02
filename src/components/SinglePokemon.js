@@ -14,7 +14,7 @@ export default function SinglePokemon({ item, singlePokemon }) {
                 //console.log("type:", type);
                 return (
                   <div>
-                    <p className=" mt-1 text-xs border text-white mx-0.5 bg-orange-300 border-none w-20 rounded-full">
+                    <p className=" mt-1 text-xs  font-extrabold text-white mx-0.5 bg-amber-500  border-none w-20 rounded-full">
                       {type}
                     </p>
                   </div>
